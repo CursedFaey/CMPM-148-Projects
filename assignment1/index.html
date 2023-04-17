@@ -842,10 +842,14 @@ NAME meat dialog
 DLG 8
 """
 {
-  - cake >= 1 >= juice >= 1 ?
-    {property locked false}
-  - else ?
+  - {item "0"} == 0 ?
+    {property locked true} You should look elsewhere first before going {shk}deeper{/shk} into the forest.
+  - {item "3"} == 0 ?
     {property locked true}You should look elsewhere first before going {shk}deeper{/shk} into the forest.
+  - {item "4"} == 0 ?
+    {property locked true} You should look elsewhere first before going {shk}deeper{/shk} into the forest.
+  - else ?
+    {property locked false}
 }
 """
 NAME locked exit to meat
@@ -874,11 +878,18 @@ DLG c
 NAME locked exit 1
 
 DLG d
-These bones seem to be {wvy}moving,{/wvy} {shk}pulsing...{/shk}{pg}{shk}You tear off some rotten flesh.{/shk}{pg}{wvy}{rbw}Yum!{/rbw}{/wvy}{rotting = 1}
+These bones seem to be {wvy}moving,{/wvy} {shk}pulsing...{/shk}{pg}{shk}You tear off some rotten flesh.{/shk}{pg}{wvy}{rbw}Yum!{/rbw}{/wvy}{tune "2"}{rotting = 1}
 NAME moving bones dialog
 
 DLG e
-You go back to your picnic with all of your food collected and have a wonderful picnic!
+"""
+{
+  - rotting == 1 ?
+    {property locked false}You go back to your picnic with all of your food collected and have a {rbw}{wvy}wonderful picnic!{/wvy}{/rbw}
+  - else ?
+    {property locked true}
+}
+"""
 NAME ending 1
 
 VAR basket
