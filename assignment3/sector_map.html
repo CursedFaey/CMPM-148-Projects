@@ -1,10 +1,22 @@
 <!DOCTYPE html><head>
     <title> Sector Map</title>
+    
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="tracery.min.js"></script>
+    <script src="input_output.js"></script>
+    <script src="grammar.js"></script>
+    <script src="sector_map.js"></script>
+
     </head>
     <body>
         <a href="sector_map.html"> Valantis Sector Map</a>
         <a href="commission_board.html"> Valantis Commission Board</a>
         <a href="recommended_systems.html"> Recommended Systems</a>
         <a href="source_code.html"> Source Code</a>
+    
+        <button onclick="build_sectors()"> Scan Sectors </button>
+
+        <div id="sectors"></div>
+    
     </body>
     </html>
