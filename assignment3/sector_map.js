@@ -6,49 +6,49 @@ function build_sectors(){
     
     // Air Sectors
     output += "Air Sectors: <br> <ol>";
-    sector_data = {
+    sector_data_air = {
         "name"      : ["a", "b"],
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
     for (let i = 0; i < 5; i++){
-        output += "<li>" + grammars.GenerationSimple(sector_data) + "</li>";
+        output += "<li>" + grammars.GenerationSimple(sector_data_air) + "</li>";
     }
     output += "</ol>";
 
     // Earth Sectors
     output += "Earth Sectors: <br> <ol>";
-    sector_data = {
+    sector_data_earth = {
         "name"      : ["a", "b"],
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
     for (let i = 0; i < 5; i++){
-        output += "<li>" + grammars.GenerationSimple(sector_data) + "</li>";
+        output += "<li>" + grammars.GenerationSimple(sector_data_earth) + "</li>";
     }
     output += "</ol>";
 
     // Fire Sectors
     output += "Fire Sectors: <br> <ol>";
-    sector_data = {
+    sector_data_fire = {
         "name"      : ["a", "b"],
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
     for (let i = 0; i < 5; i++){
-        output += "<li>" + grammars.GenerationSimple(sector_data) + "</li>";
+        output += "<li>" + grammars.GenerationSimple(sector_data_fire) + "</li>";
     }
     output += "</ol>";
 
     // Water Sectors
     output += "Water Sectors: <br> <ol>";
-    sector_data = {
+    sector_data_water = {
         "name"      : ["a", "b"],
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
     for (let i = 0; i < 5; i++){
-        output += "<li>" + grammars.GenerationSimple(sector_data) + "</li>";
+        output += "<li>" + grammars.GenerationSimple(sector_data_water) + "</li>";
     }
     output += "</ol>";
     sector_data_save = output;

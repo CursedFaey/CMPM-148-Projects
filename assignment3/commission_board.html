@@ -1,10 +1,27 @@
 <!DOCTYPE html><head>
-    <title> Valantis Commission Board</title>
+    <title> Sector Map</title>
+    
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="tracery.min.js"></script>
+    <script src="input_output.js"></script>
+    <script src="grammar.js"></script>
+    <script src="commission_board.js"></script>
+
     </head>
     <body>
         <a href="sector_map.html"> Valantis Sector Map</a>
         <a href="commission_board.html"> Valantis Commission Board</a>
         <a href="recommended_systems.html"> Recommended Systems</a>
-        <a href="source_code.html"> Source Code</a>
+        <a href="source_code.html"> Source Code</a><br><br>
+    
+        <button onclick="build_commission()"> Find Commission </button>
+
+        <div id="commission"></div>
+
+        <button onclick="save_commission()"> Save Commission Data </button><br>
+        <button onclick="move_left()"> Left </button><button onclick="move_right()"> Right </button>
+
+        <div id="saved_data"></div>
+    
     </body>
     </html>
