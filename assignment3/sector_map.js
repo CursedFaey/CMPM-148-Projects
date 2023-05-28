@@ -56,13 +56,5 @@ function build_sectors(){
 }
 
 function save_sectors(){
-    copyToClipboardAsync(sector_data_save);
-    io.write_into_element("~Copied to Clipboard!~<br>" + sector_data_save, "saved_data");
+    io.write_into_element(sector_data_save, "saved_data");
 }
-
-// used from "30 Seconds of Code"
-const copyToClipboardAsync = str => {
-    if (navigator && navigator.clipboard && navigator.clipboard.writeText)
-      return navigator.clipboard.writeText(str);
-    return Promise.reject('The Clipboard API is not available.');
-  };
