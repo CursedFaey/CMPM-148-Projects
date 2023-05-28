@@ -17,11 +17,14 @@ function build_commission(){
     console.log(output);
 }
 
+// saves a commission if you haven't saved it already
 function save_commission(){
-    if (com_num < 1){
+    if(output == ""){return;
+    }else if(com_num < 1){
         commission_databank.push(output);
         //console.log(commission_databank);
-        com_num += 1;
+        com_num++;
+        //console.log(com_num);
         current_com = 0;
     }else{
         for (let i = 0; i < com_num; i++){
@@ -30,16 +33,26 @@ function save_commission(){
         commission_databank.push(output);
         //console.log(commission_databank);
         com_num++;
+        //console.log(com_num);
         current_com = (com_num - 1);
     }
-    io.write_into_element(output, "saved_data");
+    io.write_into_element("~~~~~~~~~~~~~#" + (current_com + 1) + "~~~~~~~~~~~~~<br>" + output, "saved_data");
 }
 
+// moves left to other saved commissions
 function move_left(){
-    current_com = 0;
-    io.write_into_element(commission_data_save, "saved_data");
+    if(output == ""){return;
+    }else if(current_com > 0){
+        current_com--;
+    }
+    io.write_into_element("~~~~~~~~~~~~~#" + (current_com + 1) + "~~~~~~~~~~~~~<br>" + commission_databank[current_com], "saved_data");
 }
 
+//moves right to recently saved commissions
 function move_right(){
-    io.write_into_element(commission_data_save, "saved_data");
+    if(output == ""){return;
+    }else if(current_com < com_num - 1){
+        current_com++;
+    }
+    io.write_into_element("~~~~~~~~~~~~~#" + (current_com + 1) + "~~~~~~~~~~~~~<br>" + commission_databank[current_com], "saved_data");
 }
