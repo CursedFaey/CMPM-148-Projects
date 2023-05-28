@@ -11,7 +11,7 @@ function build_sectors(){
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
-    for (let i = 0; i < 5; i++){
+    for (let i = 1; i < 6; i++){
         output += "<li>" + grammars.GenerationSimple(sector_data_air) + "</li>";
     }
     output += "</ol>";
@@ -23,7 +23,7 @@ function build_sectors(){
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
-    for (let i = 0; i < 5; i++){
+    for (let i = 1; i < 6; i++){
         output += "<li>" + grammars.GenerationSimple(sector_data_earth) + "</li>";
     }
     output += "</ol>";
@@ -35,7 +35,7 @@ function build_sectors(){
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
-    for (let i = 0; i < 5; i++){
+    for (let i = 1; i < 6; i++){
         output += "<li>" + grammars.GenerationSimple(sector_data_fire) + "</li>";
     }
     output += "</ol>";
@@ -47,7 +47,7 @@ function build_sectors(){
         "details"   : ["a", "b"],
         "origin"    : "#name# - #details#"
     }
-    for (let i = 0; i < 5; i++){
+    for (let i = 1; i < 6; i++){
         output += "<li>" + grammars.GenerationSimple(sector_data_water) + "</li>";
     }
     output += "</ol>";
@@ -56,5 +56,5 @@ function build_sectors(){
 }
 
 function save_sectors(){
-    io.write_into_element(sector_data_save, "saved_data");
+    io.write_into_element("<i>Copy text below into clipboard to transfer sectors to Commission Board</i><br>" + sector_data_save, "saved_data");
 }
