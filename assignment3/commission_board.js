@@ -3,12 +3,13 @@ const commission_databank = [];
 current_com = 0;
 com_num = 0;
 output = "";
+saved = false;
 function build_commission(){
     // Commission generation
     output = "<b>Commission: ";
     commission_data = {
         // Commission name generator
-        "setTask"   : ["[taskName:Bounty Hunters Wanted][story:#[object:#prey#][#setPronouns#]taskBounty#]", "[taskName:Stolen Item][story:#[object:#treasure#][#setPronouns#]taskTheft#]", "[taskName:Missing Person][story:#[object:#lost#][#setPronouns#]taskSearch#]"],
+        "setTask"   : ["[taskName:Bounty Hunters Wanted][story:#[object:#bountyObj#][#setPronouns#]taskBounty#]", "[taskName:Stolen Item][story:#[object:#theftObj#]taskTheft#]", "[taskName:Missing Person][story:#[object:#missingObj#][#setPronouns#]taskSearch#]"],
 
         // person generator
         "person"    : ["#name#", "#namecraft#", "Anonymous"],
@@ -26,21 +27,42 @@ function build_commission(){
         "four"      : ["tu", "po", "da", "th", "lm", "wo", "va", "gr", "ch", "pi", "gh", "vo", "er", "ni", "ro", "bo", "di", "al", "a", "et"],
 
         // gender generator
-        "setPronouns"    : ["[pthey:they][pthem:them][ptheir:their]", "[pthey:he][pthem:him][ptheir:his]", "[pthey:she][pthem:her][ptheir:hers]"],
+        "setPronouns": ["[pthey:they][pthem:them][ptheir:their]", "[pthey:he][pthem:him][ptheir:his]", "[pthey:she][pthem:her][ptheir:hers]"],
         
         ///////////// tasks ("story")
         //Bounty
-        "prey"      : ["#name#", "#namecraft#", "The #legend.capitalize# #legend1.capitalize#", "The #legend.capitalize# #legend1.capitalize#"],
+        "bountyObj" : ["#name#", "#namecraft#", "The #legend.capitalize# #legend1.capitalize#", "The #legend.capitalize# #legend1.capitalize#"],
         "legend"    : ["shadowy", "glacial", "hellish", "galvanic", "silent", "one-eyed", "blind", "magic"],
         "legend1"   : ["fist", "blade", "one", "rat", "assassin", "warlock", "creature", "killer"],
-        "taskBounty": ["a #object# #pthey# #pthem#", "b #object# #pthey# #pthem#"],
-        //Stolen Item
-        "treasure"  : ["c", "d"],
-        "taskTheft" : ["a #object# #pthey# #pthem#", "b #object# #pthey# #pthem#"],
-        //Missing Person
-        "lost"      : ["#name#", "#namecraft#"],
-        "taskSearch": ["a #object# #pthey# #pthem#", "b #object# #pthey# #pthem#"],
 
+        "taskBounty": ["I'm searching for #object# <br> #pthey.capitalize# got too #comfy# and #deed# one too many times <br> It is time for #ptheir# #reign# of #terror# to end <br> I need someone to bring me #ptheir# #proof# as proof"],
+        "comfy"     : ["comfortable", "cocky", "unreliable", "messy"],
+        "deed"      : ["killed", "stole", "messed up"],
+        "reign"     : ["reign", "life", "legacy"],
+        "terror"    : ["terror", "death", "mistakes"],
+        "proof"     : ["head", "hand", "ring"],
+        //Stolen Item
+        "theftObj"  : ["#magicEle# ring", "#magicEle# sword", "#magicEle# focus", "heirloom #treasure#"],
+        "magicEle"  : ["storm", "chilling", "fae", "magic", "draconic", "obsidian"],
+        "treasure"  : ["ring", "sword", "key", "music box", "staff"],
+
+        "taskTheft" : ["Someone stole my #object# <br> It is very #important# to #someone# and I need help finding it <br> The thief left #traces# around my place but I am #excuse#"],
+        "important" : ["valuable", "important", "special"],
+        "someone"   : ["me", "my partner", "my family", "my work", "my magic"],
+        "traces"    : ["traces of elemental fire", "traces of elemental water", "traces of elemental air", "traces of elemental earth", "metal scraps", "motes of abyssal magic", "motes of fae magic"],
+        "excuse"    : ["frightened of them", "too busy to look myself", "injured from the encounter"],
+
+        //Missing Person
+        "missingObj": ["#name#", "#namecraft#"],
+
+        "taskSearch": ["My #relation# #object# #sign# <br> #pthey.capitalize# usually #stay# but I haven't #seen# #pthem# in a while <br> I am worried for #pthem#"],
+        "relation"  : ["friend", "coworker", "partner", "classmate"],
+        "sign"      : ["hasn't been answering my messages", "left while they were working", "got drunk and hasn't been heard from since"],
+        "stay"      : ["go to local taverns", "go for walks around #sectorType# at night", "work in #sectorType#"],
+        "seen"      : ["seen", "heard", "talked to"],
+        /////////////
+
+        //leads
         "leads"     : ["You can find me in #sector# to learn more. #locate#", "You might be able to ask around in #sector# to learn more."],
         "locate"    : ["I'll be hanging around taverns in the sector.", "I'll be wearing #clothes# around the shops.", "I'll be waiting at my place at #address#."],
         "clothes"   : ["a #color# jacket", "#color# shoes", "A #color# hat"],
@@ -49,6 +71,7 @@ function build_commission(){
         "sectorType": ["Earth Sector #sectorNum#", "Air Sector #sectorNum#", "Fire Sector #sectorNum#", "Water Sector #sectorNum#"],
         "sectorNum" : ["1", "2", "3", "4", "5"],
 
+        //rewards
         "rewards"   : ["#num1##num2##num2# gold"],
         "num1"      : ["1", "2", "3", "4"],
         "num2"      : ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
@@ -65,6 +88,7 @@ function build_commission(){
 
 // saves a commission if you haven't saved it already
 function save_commission(){
+    saved = true;
     if(output == ""){return;
     }else if(com_num < 1){
         commission_databank.push(output);
@@ -87,7 +111,7 @@ function save_commission(){
 
 // moves left to other saved commissions
 function move_left(){
-    if(output == ""){return;
+    if(saved == false){return;
     }else if(current_com > 0){
         current_com--;
     }
@@ -96,7 +120,7 @@ function move_left(){
 
 //moves right to recently saved commissions
 function move_right(){
-    if(output == ""){return;
+    if(saved== false){return;
     }else if(current_com < com_num - 1){
         current_com++;
     }
