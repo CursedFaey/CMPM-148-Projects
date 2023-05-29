@@ -7,9 +7,35 @@ function build_commission(){
     // Commission generation
     output = "<b>Commission: ";
     commission_data = {
-        "name"      : ["a", "b"],
-        "details"   : ["a", "b"],
-        "origin"    : "#name# - #details#"
+        "task"      : ["a", "b"],
+
+        "person"    : ["Commissioner: #name#", "Commissioner: #namecraft#", "Commissioner: Anonymous", "Commissioner: Anonymous"],
+        "name"      : ["#real.capitalize# #reallast.capitalize#"],
+        "namecraft" : ["#first.capitalize# #last.capitalize#"],
+        "first"     : ["#one##two##three##four#", "#one##two##three#", "#real#", "#real#", "#real#"],
+        "last"      : ["#one##two##three##four#", "#one##two##three#", "#element##elelast#", "#element##elelast#", "#element##elelast#", "#reallast#", "#reallast#", "#reallast#"],
+        "real"      : ["Agnes", "Hollie", "Harmony", "Elijah", "Varun", "Kazuha", "Percy", "Saul", "Junae", "Leilani", "Bjorn", "Selene", "Robin", "Lucille"],
+        "reallast"  : ["Knox", "Mercado", "Garcia", "Steele", "Shepard", "Bauer", "Lloyd", "Valentine", "Chen", "Alvarez", "Riggs", "Herring", "King", "Cannon"],
+        "element"   : ["frost", "fire", "stone", "breeze", "rain", "smoke", "earth", "ice"],
+        "elelast"   : ["shaker", "flame", "storm", "wave"],
+        "one"       : ["a", "al", "au", "br", "bo", "di", "ma", "ka", "ro", "ni", "ly", "vo", "ya", "er", "et", "gha", "fri", "jo"],
+        "two"       : ["tu", "po", "da", "th", "lm", "wo", "va", "gr", "ch", "pi", "gh"],
+        "three"     : ["ack", "-ack", "or", "-or", "le", "-le", "br", "-br", "ch", "-ch", "bo", "-bo", "a", "-a", "gha", "-gha", "fri", "-fri"],
+        "four"      : ["tu", "po", "da", "th", "lm", "wo", "va", "gr", "ch", "pi", "gh", "vo", "er", "ni", "ro", "bo", "di", "al", "a", "et"],
+
+        "story"     : ["a", "b"],
+        "prey"      : ["a", "b"],
+        "treasure"  : ["a", "b"],
+        "lost"      : ["a", "b"],
+        "deliver"   : ["a", "b"],
+        "sleuth"    : ["a", "b"],
+
+        "leads"     : ["a", "b"],
+        "sector"    : ["a", "b"],
+
+        "rewards"   : ["a", "b"],
+
+        "origin"    : "#task#</b> <br><br> #person# <br><br> #story# <br><br> #leads# <br><br> #rewards#"
     }
     output += grammars.GenerationSimple(commission_data) + "</b>";
 
