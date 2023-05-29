@@ -7,13 +7,15 @@ function build_commission(){
     // Commission generation
     output = "<b>Commission: ";
     commission_data = {
-        "task"      : ["a", "b"],
+        // Commission name generator
+        "setTask"   : ["[taskName:Bounty Hunters Wanted][story:#[object:#prey#][#setPronouns#]taskBounty#]", "[taskName:Stolen Item][story:#[object:#treasure#][#setPronouns#]taskTheft#]", "[taskName:Missing Person][story:#[object:#lost#][#setPronouns#]taskSearch#]"],
 
-        "person"    : ["Commissioner: #name#", "Commissioner: #namecraft#", "Commissioner: Anonymous", "Commissioner: Anonymous"],
+        // person generator
+        "person"    : ["#name#", "#namecraft#", "Anonymous"],
         "name"      : ["#real.capitalize# #reallast.capitalize#"],
         "namecraft" : ["#first.capitalize# #last.capitalize#"],
         "first"     : ["#one##two##three##four#", "#one##two##three#", "#real#", "#real#", "#real#"],
-        "last"      : ["#one##two##three##four#", "#one##two##three#", "#element##elelast#", "#element##elelast#", "#element##elelast#", "#reallast#", "#reallast#", "#reallast#"],
+        "last"      : ["#one##two#d#three##four#", "#one##two##three#", "#element##elelast#", "#element##elelast#", "#element##elelast#", "#reallast#", "#reallast#", "#reallast#"],
         "real"      : ["Agnes", "Hollie", "Harmony", "Elijah", "Varun", "Kazuha", "Percy", "Saul", "Junae", "Leilani", "Bjorn", "Selene", "Robin", "Lucille"],
         "reallast"  : ["Knox", "Mercado", "Garcia", "Steele", "Shepard", "Bauer", "Lloyd", "Valentine", "Chen", "Alvarez", "Riggs", "Herring", "King", "Cannon"],
         "element"   : ["frost", "fire", "stone", "breeze", "rain", "smoke", "earth", "ice"],
@@ -23,19 +25,37 @@ function build_commission(){
         "three"     : ["ack", "-ack", "or", "-or", "le", "-le", "br", "-br", "ch", "-ch", "bo", "-bo", "a", "-a", "gha", "-gha", "fri", "-fri"],
         "four"      : ["tu", "po", "da", "th", "lm", "wo", "va", "gr", "ch", "pi", "gh", "vo", "er", "ni", "ro", "bo", "di", "al", "a", "et"],
 
-        "story"     : ["a", "b"],
-        "prey"      : ["a", "b"],
-        "treasure"  : ["a", "b"],
-        "lost"      : ["a", "b"],
-        "deliver"   : ["a", "b"],
-        "sleuth"    : ["a", "b"],
+        // gender generator
+        "setPronouns"    : ["[pthey:they][pthem:them][ptheir:their]", "[pthey:he][pthem:him][ptheir:his]", "[pthey:she][pthem:her][ptheir:hers]"],
+        
+        ///////////// tasks ("story")
+        //Bounty
+        "prey"      : ["#name#", "#namecraft#", "The #legend.capitalize# #legend1.capitalize#", "The #legend.capitalize# #legend1.capitalize#"],
+        "legend"    : ["shadowy", "glacial", "hellish", "galvanic", "silent", "one-eyed", "blind", "magic"],
+        "legend1"   : ["fist", "blade", "one", "rat", "assassin", "warlock", "creature", "killer"],
+        "taskBounty": ["a #object# #pthey# #pthem#", "b #object# #pthey# #pthem#"],
+        //Stolen Item
+        "treasure"  : ["c", "d"],
+        "taskTheft" : ["a #object# #pthey# #pthem#", "b #object# #pthey# #pthem#"],
+        //Missing Person
+        "lost"      : ["#name#", "#namecraft#"],
+        "taskSearch": ["a #object# #pthey# #pthem#", "b #object# #pthey# #pthem#"],
 
-        "leads"     : ["a", "b"],
-        "sector"    : ["a", "b"],
+        "leads"     : ["You can find me in #sector# to learn more. #locate#", "You might be able to ask around in #sector# to learn more."],
+        "locate"    : ["I'll be hanging around taverns in the sector.", "I'll be wearing #clothes# around the shops.", "I'll be waiting at my place at #address#."],
+        "clothes"   : ["a #color# jacket", "#color# shoes", "A #color# hat"],
+        "color"     : ["red", "black", "blue", "beige", "purple", "dark green"],
+        "address"   : ["Sector Residency: #num3##num2##num2##num2##num2#"],
+        "sectorType": ["Earth Sector #sectorNum#", "Air Sector #sectorNum#", "Fire Sector #sectorNum#", "Water Sector #sectorNum#"],
+        "sectorNum" : ["1", "2", "3", "4", "5"],
 
-        "rewards"   : ["a", "b"],
+        "rewards"   : ["#num1##num2##num2# gold"],
+        "num1"      : ["1", "2", "3", "4"],
+        "num2"      : ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+        "num3"      : ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
 
-        "origin"    : "#task#</b> <br><br> #person# <br><br> #story# <br><br> #leads# <br><br> #rewards#"
+        "commission": ["#taskName#</b> <br><br> Commissioner: #person# <br><br> #story# <br><br> Leads: #[sector:#sectorType#]leads# <br><br> Reward: #rewards#"],
+        "origin"    : ["#[#setTask#]commission#"]
     }
     output += grammars.GenerationSimple(commission_data) + "</b>";
 

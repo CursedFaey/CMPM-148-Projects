@@ -3,8 +3,8 @@ sector_data_save = "";
 function build_sectors(){
     // City Name
     output = "<b>Valantis:</b> <br><br>"
-    
-    // Air Sectors
+
+    // Air Sectors 
     output += "Air Sectors: <br> <ol>";
     sector_data_air = {
         "name"      : ["#adj# Gardens of #person#", "#subject# of Summer", "#form#", "#form#", "#form#", "#form#", "#form#", "#form#", "#form#", "#form#",],
