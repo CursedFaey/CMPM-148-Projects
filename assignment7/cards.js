@@ -49,12 +49,12 @@ cardPool = {
     prompt: "Your boss storms off from your cubicle, leaving you alone.",
     rightChoiceText: "Sit in cubicle",
       rightChoice: function(){
-      addResource("entertainment", 10)
+      addResource("entertainment", 0)
       addPackToDeck("rotting")
       },
     leftChoiceText: "Get up to do work", 
     leftChoice: function(){
-      addResource("work", 10)
+      addResource("work", 0)
       addPackToDeck("wandering")
     },
     name: "The Cubicle",
