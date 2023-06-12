@@ -1,18 +1,18 @@
 README
 
 
-If you awant to produce your cards in a spreadsheet, here is a template to start from. Export as Tab seperated values and then copy paste into the spot int index.html. 
-https://docs.google.com/spreadsheets/d/1y6r9WXb2a9FA0KxBa__Y3LriUq8_KHakMViJ2irY5D4/edit?usp=sharing
+Spreadsheet Used:
+https://docs.google.com/spreadsheets/d/1lRoTwxHvAIY2y9Iec5G1_8qLwUTHzm2NVtc9XSTrWbg/edit?usp=sharing
 
 
-Resource Icons:
+Mr. Lucifer: Torsional Cubism Theory by David S. Soriano, https://commons.wikimedia.org/wiki/File:Torsional_Cubism_Theory_by_David_S._Soriano.png, CC BY-SA 4.0
 
-Meat icon: Lorc https://lorcblog.blogspot.com/ under CC BY 3.0
-Carrot Icon: Delapouite https://delapouite.com/ under CC BY 3.0
+Gabriel: Van Gogh Cubism Portrait by David S. Soriano, https://commons.wikimedia.org/wiki/File:Van_Gogh_Cubism_Portrait_by_David_S._Soriano.png, CC BY-SA 4.0
 
+Dina: Cubism 2022 Woman with Cat by David S. Soriano, https://commons.wikimedia.org/wiki/File:Cubism_2022_Woman_with_Cat.png, CC BY-SA 4.0
 
-Van Gogh: Foto van een zelfportret van Vincent van Gogh, https://commons.wikimedia.org/wiki/File:Foto_van_een_zelfportret_van_Vincent_van_Gogh,_Bestanddeelnr_255-9139.jpg, Public Domain
+Floor 666: Deep Learning Cubism by David S. Soriano, https://commons.wikimedia.org/wiki/File:Deep_Learning_Cubism.png, CC BY-SA 4.0
 
-Légumes: https://commons.wikimedia.org/wiki/File:L%C3%A9gumes_01.jpg, Public Domain
+Cubicle: The Cubism Rejects by David S. Soriano, https://commons.wikimedia.org/wiki/File:The_Cubism_Rejects.png, CC BY-SA 4.0
 
-Squirrel by Tfbybyhf: https://commons.wikimedia.org/wiki/File:Squirrel_on_a_Branch.jpg  Public Domain
+CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/deed.en

@@ -1,6 +1,9 @@
 let resources = [
-  {key: "meat", value: 40,image: "./images/meat.svg", },
-  {key: "veggies", value: 50, image: "./images/carrot.svg"}
+  {key: "work", value: 30,image: "./images/work.svg"},
+  {key: "entertainment", value: 30, image: "./images/entertainment.svg"},
+  {key: "battery", value: 80, image: "./images/battery.svg"},
+  {key: "paper", value: 100, image: "./images/paper.svg"}
+  
 ]
 
 function addResource(key, amount){
@@ -10,6 +13,11 @@ function addResource(key, amount){
   
 }
 
+function setResource(key, num){
+  for (x in resources){
+    if (key == resources[x].key) resources[x].value == num;
+  }
+}
 
 function setStatIcons () {
   let resource_bar = ""
@@ -34,16 +42,27 @@ function checkFail() {
   failures = []
     for (x in resources) {
       if (resources[x].value > 100) {failures.push({resource: resources[x].key, level: "high"})}
-      if (resources[x].value < 0) {failures.push({rsource: resources[x].key, level: "low"})}
+      if (resources[x].value < 0) {failures.push({resource: resources[x].key, level: "low"})}
   }
    console.log(failures)
   for (x in failures){
     let f = failures[x];
+    console.log(f.resource);
+    console.log(f.level);
+    if (f.resource == "battery" && f.level == "high"){
+      return;
+    }
+    if (f.resource == "paper" && f.level == "high"){
+      return;
+    }
     for ( i in failCards){
       let failCard = failCards[i];
-      if (failCard.resource === f.resource && failCard.level === f.level)
+      if (failCard.resource == f.resource && failCard.level == f.level){
+        //console.log("Y E S");
         addToTopDeck(failCard.card, false)
-      else
+        return;
+      }else
+      //console.log("NOOOOOOOOOOO");
         addToTopDeck(defaultFailCard, false)
     }
     

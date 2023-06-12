@@ -31,7 +31,7 @@ function shuffleDeck(array){
   for (x in positions) {newArray.push(positions[x].value)}
   newArray.sort(function(a, b){a.priority - b.priority})
   
-    deck=  newArray;
+    deck =  newArray;
   }
   
   

@@ -1,65 +1,66 @@
 
 firstCard = {
-  prompt: "Isn't painting Wonderful???",
-  rightChoiceText: "I LOVE PAINTING",
+  prompt: "Your boss caught you sleeping on the job. <br>'Did you finish your work?'",
+  rightChoiceText: "I definitely, totally did my work...",
   rightChoice: function(){
-    addResource("veggies", 20)
-      addPackToDeck("bumbling")
-    addToTopDeck("VanGoghHappy")
+    addResource("entertainment", 0)
+    addToTopDeck("BossDissapointed")
     },
   
-  leftChoiceText: "PAINTING SUCKS", 
+  leftChoiceText: "Yes..?", 
   leftChoice: function(){
-    addResource("meat", 20)
-      addPackToDeck("bumbling")
-    addToTopDeck("VanGoghBetrayed")
-    workDone += 1;
+    addResource("work", 0)
+    addToTopDeck("BossDissapointed")
+    workDone += 0;
   },
-  name: "Van Gogh",
+  name: "Mr. Lucifer",
   resultText: "",
-  image: "./images/VanGosh.png",
+  image: "./images/mrLucifer.png",
   priority: 1,
   pack : "none"
 }
 
 
 cardPool = {
-  "uniqueIDList" : ["VanGoghHappy", "VanGoghBetrayed"],
+  "uniqueIDList" : ["BossDissapointed", "Cubicle1"],
   
-  "VanGoghHappy" : {
-    prompt: "Really? Let's be friends",
-    rightChoiceText: "Lol Okay",
-      rightChoice: function(){
-      addResource("veggies", 10)
+  "BossDissapointed" : {
+    prompt: "'Stop slacking on the job and go do your work!!'",
+    rightChoiceText: "Yes Boss...",
+    rightChoice: function(){
+      addResource("entertainment", 0)
+      addToTopDeck("Cubicle1")
       },
-    leftChoiceText: "XD HAHA. . .No", 
+    leftChoiceText: "Give me a raise first?", 
     leftChoice: function(){
-      addResource("meat", 20)
-      addToTopDeck("VanGoghBetrayed")
-    workDone += 1;
+      addResource("work", 0)
+      addToTopDeck("Cubicle1")
+    workDone += 0;
     },
-    name: "Van Gogh",
+    name: "Mr. Lucifer",
     resultText: "",
-    image: "./images/VanGosh.png",
+    image: "./images/mrLucifer.png",
     priority: 2,
     pack : "none"
   },
 
 
-  "VanGoghBetrayed": {
-    prompt: "To Heck with you",
-    rightChoiceText: ". . . ",
+  "Cubicle1": {
+    prompt: "Your boss storms off from your cubicle, leaving you alone.",
+    rightChoiceText: "Sit in cubicle",
       rightChoice: function(){
-      addResource("veggies", 20)
+      addResource("entertainment", 10)
+      addPackToDeck("rotting")
       },
-    leftChoiceText: "Fine. . . ", 
+    leftChoiceText: "Get up to do work", 
     leftChoice: function(){
-      addResource("meat", 100)
+      addResource("work", 10)
+      addPackToDeck("wandering")
     },
-    name: "Van Gogh",
+    name: "The Cubicle",
     resultText: "",
-    image: "./images/VanGosh.png",
-    priority: 2,
+    image: "./images/cubicle.png",
+    priority: 3,
     pack : "none"
   }
 
