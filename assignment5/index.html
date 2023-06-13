@@ -9,25 +9,31 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Arcane Sparks.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Arcane Sparks" startnode="1" creator="Twine" creator-version="2.6.1" format="Harlowe" format-version="3.3.4" ifid="625F7A25-AF51-4174-83EF-F4A4FE6B175A" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="300,50" size="100,100">==&gt;&lt;==
+<tw-storydata name="Arcane Sparks" startnode="1" creator="Twine" creator-version="2.6.1" format="Harlowe" format-version="3.3.4" ifid="625F7A25-AF51-4174-83EF-F4A4FE6B175A" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="500,200" size="100,100">==&gt;&lt;==
 - (text-color: blue)+(text-style: &quot;fidget&quot;)[A](text-color: blue)+(text-style: &quot;fidget&quot;)[R](text-color: purple)+(text-style: &quot;fidget&quot;)[C](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[E] - (text-color: orange)+(text-style: &quot;fidget&quot;)[S](text-color: orange)+(text-style: &quot;fidget&quot;)[P](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: purple)+(text-style: &quot;fidget&quot;)[R](text-color: blue)+(text-style: &quot;fidget&quot;)[K](text-color: blue)+(text-style: &quot;fidget&quot;)[S] -
 &lt;==
 tik tok tik tok look I put on my watch. Isn&#39;t that so cool? oh wow what was that spark?
 
 I should talk to my assistant.
 
------
-
-hi
-
------
-
-hi
-
 [[assistant -&gt;laboratory]]
 
 (set: num-type $looped = 0)
-(set: num-type $time = -3)</tw-passagedata><tw-passagedata pid="2" name="Clipboard" tags="" position="75,150" size="100,100">You have just finished making a prototype of an Arcane watch and are talking with your your TEKK assistant and looking around your research tower when your watch begins to spark and eventually collapse in on itself, with you with it, sending you back to when you finished setting your watch. 
+(set: num-type $time = -3)
+(set: $book = 0)
+
+(set:$choose1 to false)
+(set:$flower to false)
+(set:$choose2 to false)
+(set:$gold to false)
+(set:$choose3 to false)
+(set:$emerald to false)
+(set:$choose4 to false)
+(set:$frog to false)
+(set:$choose5 to false)
+(set:$owl to false)
+(set: $pause to false)
+</tw-passagedata><tw-passagedata pid="2" name="Clipboard" tags="" position="75,150" size="100,100">You have just finished making a prototype of an Arcane watch and are talking with your your TEKK assistant and looking around your research tower when your watch begins to spark and eventually collapse in on itself, with you with it, sending you back to when you finished setting your watch. 
 
 Talk to your TEKK assistant to ask about where they put the blue prints/ingredients.
 Search the tower for you ingredients and solve puzzles to find these ingredients.
@@ -47,6 +53,8 @@ Time code:
 (if: $time is 30)[(show: ?ending)](else:)[(show: ?paths)]
 *used for ending the loop at the timed ending*
 
+(set: [$pause to true])
+
 Text code:
 
 [text](x| *x is a tag for using ?x*
@@ -60,193 +68,258 @@ Text style:
 
 (text-color: red)+(hover-style:(text-color: orange))+(text-style: &quot;fidget&quot;)[text]</tw-passagedata><tw-passagedata pid="3" name=" here" tags="" position="75,25" size="100,100">[[wait in place -&gt; here]] *can be used to stay in place but pass the time*
 
-[[back to Clipboard -&gt;Clipboard]]</tw-passagedata><tw-passagedata pid="4" name="balcony" tags="" position="1050,200" size="100,100">*4 - 10*
-(set: $time to it + 3)
-
-hi
-
------
-
-hi
-
------
-
-hi
-
-[[central room]]
-
-[[piece2]]
-
-[[hint2]]
-
-[[wrong]]
-[[ending]]
-
-(if: $looped &gt;= 1)[(show: ?history1)]
-(if: $looped &gt;= 2)[(show: ?history2)]
-
-(if: $time &lt;= 12)[(show: ?opening)](else:)[(show: ?closed)] 
-(if: $time is 30)[(show: ?ending)](else:)[(show: ?closed2)] </tw-passagedata><tw-passagedata pid="5" name="central room" tags="" position="825,375" size="100,100">*3 - 5 - 9*
-(set: $time to it + 3)
-
-hi
-
------
-
-hi
-
------
-
-hi
-
-[[laboratory]]
-
-[[piece3]]
-
-[[hint3]]
-
-(if: $looped &gt;= 1)[(show: ?history1)]
-(if: $looped &gt;= 2)[(show: ?history2)]
-
-(if: $time &gt;= 9 and $time &lt;= 15)[(show: ?opening))](else:)[(show: ?closed)]</tw-passagedata><tw-passagedata pid="6" name="garden" tags="" position="300,600" size="100,100">*1*
-(set: $time to it + 3)
-
-hi
-
------
-
-hi
-
------
-
-hi
-
-[[laboratory]]
-
-[[piece1]]
-
-(text-color: yellow)[[[Sparks -&gt;hint1]]](history2|
-
-(if: $looped &gt;= 1)[(show: ?history1)]
-(if: $looped &gt;= 2)[(show: ?history2)]
-
-(if: $time &lt;= 6)[(show: ?opening)](else:)[(show: ?closed)] </tw-passagedata><tw-passagedata pid="7" name="library" tags="" position="150,300" size="100,100">*7*
-(set: $time to it + 3)
-
-hi
-
------
-
-hi
-
------
-
-hi
-
-[[laboratory]]
-
-[[piece5]]
-
-[[hint5]]
-
-(if: $looped &gt;= 1)[(show: ?history1)]
-(if: $looped &gt;= 2)[(show: ?history2)]
-
-(if: $time &gt;= 21)[(show: ?opening)](else:)[(show: ?closed)] </tw-passagedata><tw-passagedata pid="8" name="laboratory" tags="" position="575,525" size="100,100">==&gt; *0 - 2 - 6 - 8* &lt;==
-(set: $time to it + 3)
+[[back to Clipboard -&gt;Clipboard]]</tw-passagedata><tw-passagedata pid="4" name="balcony" tags="" position="1425,525" size="100,100">*4 - 10*
+(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
 8:(if: $time &lt; 10)[0]$time
+&lt;==
 
-hi
-
------
-
-hi
+[ You stare out at the beautiful sunset. What a view. Your assistant doesn&#39;t seem to be around the storage closet.[ [The storage closet is cracked open letting anyone in at its [[contents-&gt;piece2]]. ](reveal| ](opening| ]&lt;story|
 
 -----
 
-hi
+[ hi [ [ [[piece2]] ](reveal| ](opening| ](history|
 
-[[garden]]
+-----
+[ [[wait-&gt;balcony]] ](wait|
+[ [ [[The sparks grow stronger -&gt;wrong]] ](no|
+[ [[Time to end this -&gt;ending]] ](yes| ](timer| [ [[central room]]
+
+(hover-style:(text-color: yellow))[[[Sparks -&gt;hint2]]](history2| ](tik|
+
+(if: $time &lt;= 12)[(show: ?opening)]
+(if: $choose2 is false)[(show: ?reveal)]
+(if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
+(if: $flower and $gold and $emerald and $frog and $owl)[(show: ?yes)](else:)[(show: ?no)]
+(if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $looped &gt;= 3)[(show: ?history2)]
+(if: $time &gt;= 30)[(hide: ?wait)]
+</tw-passagedata><tw-passagedata pid="5" name="central room" tags="" position="1125,525" size="100,100">*3 - 5 - 9*
+(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+==&gt;&lt;==
+8:(if: $time &lt; 10)[0]$time
+&lt;==
+
+[ A circling metal machine rotates above you at the center of the tower. The Crystal grinder sits directly under the metal machine. [ [The Crystal grinder has stopped for the moment, revealing some [[dust -&gt;piece3]]. ](reveal| ](opening| ]&lt;story|
+
+-----
+
+[ hi [ [ [[piece3]] ](reveal| ](opening| ](history|
+
+-----
+[ [[wait-&gt;central room]] ](wait|
+[ [[The sparks grow stronger -&gt;loop]] ](timer| [ [[laboratory]]
+[[balcony]]
+
+(hover-style:(text-color: yellow))[[[Sparks -&gt;hint3]]](history2| ](tik|
+
+(if: $time &gt;= 9 and $time &lt;= 15)[(show: ?opening)]
+(if: $choose3 is false)[(show: ?reveal)]
+(if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
+(if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $looped &gt;= 3)[(show: ?history2)]
+(if: $time &gt;= 30)[(hide: ?wait)]</tw-passagedata><tw-passagedata pid="6" name="garden" tags="" position="525,550" size="100,100">*1*
+(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+==&gt;&lt;==
+8:(if: $time &lt; 10)[0]$time
+&lt;==
+
+[ Your verdant garden is prospering like always. You can&#39;t find your assistant tending to the garden anywhere.[ [You have some [[flowers -&gt;piece1]] with special properties blooming at the moment. ](reveal| ](opening| ]&lt;story|
+
+-----
+
+[ hi [ [ [[piece1]] ](reveal| ](opening| ](history|
+
+-----
+[ [[wait-&gt;garden]] ](wait|
+[ [[The sparks grow stronger -&gt;loop]] ](timer| [ [ [[laboratory]] ]&lt;move|
+
+(hover-style:(text-color: yellow))[[[Sparks -&gt;hint1]]](history2| ](tik|
+
+(if: $time &lt;= 6)[(show: ?opening)]
+(if: $choose1 is false)[(show: ?reveal)]
+(if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
+(if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $looped &gt;= 3)[(show: ?history2)]
+(if: $time &gt;= 30)[(hide: ?wait)]
+
+</tw-passagedata><tw-passagedata pid="7" name="library" tags="" position="225,525" size="100,100">*7*
+(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+==&gt;&lt;==
+8:(if: $time &lt; 10)[0]$time
+&lt;==
+
+[ Your library is as impressive as ever and your birds circle above you. but no sign of your assistant.[ [Huh, that&#39;s weird. Your birds seem to be missing and their [[feathers -&gt;piece5]] are scattered on the ground.  ](reveal| ](opening| ]&lt;story|
+
+-----
+
+[ hi [ [ [[piece5]] ](reveal| ](opening| ](history|
+
+-----
+[ [[wait-&gt;library]] ](wait|
+[ [[The sparks grow stronger -&gt;loop]] ](timer| [ [[laboratory]]
+[ [[Tome -&gt;explain]] ](tome|
+
+(hover-style:(text-color: yellow))[[[Sparks -&gt;hint5]]](history2| ](tik|
+
+(if: $time &gt;= 21)[(show: ?opening)]
+(if: $choose5 is false)[(show: ?reveal)]
+(if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
+(if: $looped &gt;= 1)[(show: ?tome)]
+(if: $book &gt;= 1)[(hide: ?tome)]
+(if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $looped &gt;= 3)[(show: ?history2)]
+(if: $time &gt;= 30)[(hide: ?wait)]
+</tw-passagedata><tw-passagedata pid="8" name="laboratory" tags="" position="825,525" size="100,100">==&gt; *0 - 2 - 6 - 8* &lt;==
+(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+==&gt;&lt;==
+8:(if: $time &lt; 10)[0]$time
+&lt;==
+
+[ Your assistant is nowhere to be seen here. They don&#39;t seem to be working on their own assignment in the lab here. [ [In a cauldron there are some bubling [[ingredients -&gt;piece4]]. ](reveal| ](opening| ]&lt;story|
+
+-----
+
+[ hi [ [ [[piece4]] ](reveal| ](opening| ](history|
+
+-----
+[ [[wait-&gt;laboratory]] ](wait|
+[ [[The sparks grow stronger -&gt;loop]] ](timer| [ [ [[garden]] ]&lt;move|
 [[central room]]
 [[library]]
 
-[[piece4]]
+(hover-style:(text-color: yellow))[[[Sparks -&gt;hint4]]](history2| ](tik|
 
-[[hint4]]
+(if: $time &gt;= 18 and $time &lt;= 21)[(show: ?opening)]
+(if: $choose4 is false)[(show: ?reveal)]
+(if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
+(if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $looped &gt;= 3)[(show: ?history2)]
+(if: $time &gt;= 30)[(hide: ?wait)]</tw-passagedata><tw-passagedata pid="9" name="loop" tags="" position="800,200" size="100,100">==&gt;&lt;==
+- (text-color: blue)+(text-style: &quot;fidget&quot;)[A](text-color: blue)+(text-style: &quot;fidget&quot;)[R](text-color: purple)+(text-style: &quot;fidget&quot;)[C](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[E] - (text-color: orange)+(text-style: &quot;fidget&quot;)[S](text-color: orange)+(text-style: &quot;fidget&quot;)[P](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: purple)+(text-style: &quot;fidget&quot;)[R](text-color: blue)+(text-style: &quot;fidget&quot;)[K](text-color: blue)+(text-style: &quot;fidget&quot;)[S] -
+&lt;==
+tik tok tik tok look I put on my watch. Isn&#39;t that so cool? oh wow what was that spark?
 
-(if: $looped &gt;= 1)[(show: ?history1)]
-(if: $looped &gt;= 2)[(show: ?history2)]
-
-(if: $time &gt;= 18 and $time &lt;= 21)[(show: ?opening))](else:)[(show: ?closed)]</tw-passagedata><tw-passagedata pid="9" name="loop" tags="" position="550,200" size="100,100">hi
+I should talk to my assistant... wait is my assistant still here?
 
 -----
 
-hi
+You have a nagging feeling you were in the wrong spot, although you don&#39;t remember for what.
+[You have a faint memory of a phrase in your head: &quot;From Earth&#39;s bounty, beauty is forged from shimmering light. Turning what was once a monstreous visage into an angelic being; fleeing from the schackles of the world towards a fleeting light.&quot;](memory| [You know you have a book somewhere aorund here with clues as to what is happening and what you need to do.]&lt;idea|
+[You were pretty confident in your answer for the flowers.](hint1|
+[You were pretty confident in your answer for the ingots.](hint2|
+[You were pretty confident in your answer for the dust.](hint3|
+[You were pretty confident in your answer for the animal parts.](hint4|
+[You were pretty confident in your answer for the feathers.](hint5|
 
 [[laboratory]]
 
 (set: $looped to it + 1)
 (set: $time = -3)
 
-(if: $looped &gt;= 1)[(show: ?history1)]
-(if: $looped &gt;= 2)[(show: ?history2)]</tw-passagedata><tw-passagedata pid="10" name="piece1" tags="" position="375,725" size="100,100">Purple Nightshade
+(if: $book &gt;= 1)[(show: ?memory)(hide: ?idea)]
 
-*Blue Morning Glory*
+(if: $flower)[(show: ?hint1)]
+(if: $gold)[(show: ?hint2)]
+(if: $emerald)[(show: ?hint3)]
+(if: $frog)[(show: ?hint4)]
+(if: $owl)[(show: ?hint5)]
 
-Yellow Sunflower
+(set:$choose1 to false)
+(set:$flower to false)
+(set:$choose2 to false)
+(set:$gold to false)
+(set:$choose3 to false)
+(set:$emerald to false)
+(set:$choose4 to false)
+(set:$frog to false)
+(set:$choose5 to false)
+(set:$owl to false)
+(set: $pause to false)</tw-passagedata><tw-passagedata pid="10" name="piece1" tags="" position="600,675" size="100,100">==&gt;&lt;==
+In the birds place lies a bundle of their feathers all over the library:
 
-[[blink -&gt;garden]]</tw-passagedata><tw-passagedata pid="11" name="piece2" tags="" position="1125,325" size="100,100">Bronze ingot
+- [[Blue Morning Glory]] -
 
-Silver ingot
+- [[Yellow Sunflower]] -
 
-*Gold Ingot*
+- [[Purple Nightshade]] -
 
-[[blink -&gt;balcony]]</tw-passagedata><tw-passagedata pid="12" name="piece3" tags="" position="900,500" size="100,100">ruby dust
+(set: $choose1 to true)
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="11" name="piece2" tags="" position="1500,650" size="100,100">==&gt;&lt;==
+In the birds place lies a bundle of their feathers all over the library:
 
-*emerald dust*
+- [[Bronze Ingot]] -
 
-sapphire dust
+- [[Silver Ingot]] -
 
-[[blink -&gt;central room]]</tw-passagedata><tw-passagedata pid="13" name="piece4" tags="" position="650,650" size="100,100">*Frog warts*
+- [[Gold Ingot]] -
 
-Lizard tail
+(set: $choose2 to true)
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="12" name="piece3" tags="" position="1200,650" size="100,100">==&gt;&lt;==
+In the birds place lies a bundle of their feathers all over the library:
 
-Spider silk
+- [[Ruby Dust]] -
 
-[[blink -&gt;laboratory]]</tw-passagedata><tw-passagedata pid="14" name="piece5" tags="" position="225,425" size="100,100">Raven Feather
+- [[Emerald Dust]] -
 
-*Owl Feather*
+- [[Sapphire Dust]] -
 
-Peacock Feather
+(set: $choose3 to true)
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="13" name="piece4" tags="" position="900,650" size="100,100">==&gt;&lt;==
+In the birds place lies a bundle of their feathers all over the library:
 
-[[blink -&gt;library]]</tw-passagedata><tw-passagedata pid="15" name="hint1" tags="" position="225,725" size="100,100">==&gt;&lt;==
+- [[Lizard Tail]] -
+
+- [[Frog Warts]] -
+
+- [[Spider Silk]] -
+
+(set: $choose4 to true)
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="14" name="piece5" tags="" position="300,650" size="100,100">==&gt;&lt;==
+In the birds place lies a bundle of their feathers all over the library:
+
+- [[Raven Feather]] -
+
+- [[Owl Feather]] -
+
+- [[Peacock Feather]] -
+
+(set: $choose5 to true)
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="15" name="hint1" tags="" position="450,675" size="100,100">==&gt;&lt;==
 The sparks send a shiver behind your eyes and you see an image of a beautiful sunrise.
 
 (text-color: yellow)+(text-style: &quot;fidget&quot;)[&lt;] (text-color: orange)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[0](text-color: blue)+(text-style: &quot;fidget&quot;)[9]
 
-[[blink -&gt;garden]]</tw-passagedata><tw-passagedata pid="16" name="ending" tags="" position="950,50" size="100,100">==&gt;&lt;== 
+[[blink -&gt;garden]]
 
-As the watch reaches 8:30pm, the crackling electricity all around you vanishes instantly. And you blink. Once, twice, and many more times after that without finding yourself back in your laboratory and back in time.
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="16" name="ending" tags="" position="1300,200" size="100,100">==&gt;&lt;== 
 
-(text-color: blue)+(text-style: &quot;fidget&quot;)[T](text-color: blue)+(text-style: &quot;fidget&quot;)[H](text-color: purple)+(text-style: &quot;fidget&quot;)[E] (text-color: purple)+(text-style: &quot;fidget&quot;)[E](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[D]
+As the watch reaches 8:30pm, you put the ingredients together and the crackling electricity all around you vanishes instantly. And you blink. Once, twice, and many more times after that without finding yourself back in your laboratory and back in time.
 
-</tw-passagedata><tw-passagedata pid="17" name="hint5" tags="" position="75,425" size="100,100">==&gt;&lt;==
+- (text-color: blue)+(text-style: &quot;fidget&quot;)[T](text-color: blue)+(text-style: &quot;fidget&quot;)[H](text-color: purple)+(text-style: &quot;fidget&quot;)[E] (text-color: purple)+(text-style: &quot;fidget&quot;)[E](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[D] -
+
+</tw-passagedata><tw-passagedata pid="17" name="hint5" tags="" position="150,650" size="100,100">==&gt;&lt;==
 The sparks send a shiver behind your eyes and you see a flash of white.
 
 (text-color: yellow)+(text-style: &quot;fidget&quot;)[&gt;] (text-color: orange)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[1](text-color: blue)+(text-style: &quot;fidget&quot;)[8]
 
-[[blink -&gt;library]]</tw-passagedata><tw-passagedata pid="18" name="hint4" tags="" position="500,650" size="100,100">==&gt;&lt;==
+[[blink -&gt;library]]
+
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="18" name="hint4" tags="" position="750,650" size="100,100">==&gt;&lt;==
 The sparks send a shiver behind your eyes and you see a splash of water.
 
 (text-color: blue)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[1](text-color: orange)+(text-style: &quot;fidget&quot;)[5] (text-color: yellow)+(text-style: &quot;fidget&quot;)[&gt;&lt;] (text-color: orange)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[2](text-color: blue)+(text-style: &quot;fidget&quot;)[4]
 
-[[blink -&gt;laboratory]]</tw-passagedata><tw-passagedata pid="19" name="hint3" tags="" position="750,500" size="100,100">==&gt;&lt;==
+[[blink -&gt;laboratory]]
+
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="19" name="hint3" tags="" position="1050,650" size="100,100">==&gt;&lt;==
 The sparks send a shiver behind your eyes and you see a flash of green.
 
 (text-color: blue)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[0](text-color: orange)+(text-style: &quot;fidget&quot;)[6] (text-color: yellow)+(text-style: &quot;fidget&quot;)[&gt;&lt;] (text-color: orange)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[1](text-color: blue)+(text-style: &quot;fidget&quot;)[8]
 
-[[blink -&gt;central room]]</tw-passagedata><tw-passagedata pid="20" name="hint2" tags="" position="975,325" size="100,100">==&gt;&lt;==
+[[blink -&gt;central room]]
+
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="20" name="hint2" tags="" position="1350,650" size="100,100">==&gt;&lt;==
 The sparks send a shiver behind your eyes and you see an image of a celebration and victory.
 
 (text-color: yellow)+(text-style: &quot;fidget&quot;)[&lt;] (text-color: orange)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[1](text-color: blue)+(text-style: &quot;fidget&quot;)[5]
@@ -255,16 +328,120 @@ Quickly after, you feel a great surge of energy.
 
 (text-color: yellow)+(text-style: &quot;fidget&quot;)[-&gt;] (text-color: orange)+(text-style: &quot;fidget&quot;)[8](text-style: &quot;fidget&quot;)[:](text-color: purple)+(text-style: &quot;fidget&quot;)[3](text-color: blue)+(text-style: &quot;fidget&quot;)[0] (text-color: yellow)+(text-style: &quot;fidget&quot;)[&lt;-]
 
-[[blink -&gt;balcony]]</tw-passagedata><tw-passagedata pid="21" name="wrong" tags="" position="825,100" size="100,100">hi
+[[blink -&gt;balcony]]
+
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="21" name="wrong" tags="" position="1000,200" size="100,100">==&gt;&lt;==
+- (text-color: blue)+(text-style: &quot;fidget&quot;)[A](text-color: blue)+(text-style: &quot;fidget&quot;)[R](text-color: purple)+(text-style: &quot;fidget&quot;)[C](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[E] - (text-color: orange)+(text-style: &quot;fidget&quot;)[S](text-color: orange)+(text-style: &quot;fidget&quot;)[P](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: purple)+(text-style: &quot;fidget&quot;)[R](text-color: blue)+(text-style: &quot;fidget&quot;)[K](text-color: blue)+(text-style: &quot;fidget&quot;)[S] -
+&lt;==
+tik tok tik tok look I put on my watch. Isn&#39;t that so cool? oh wow what was that spark?
+
+I should talk to my assistant... wait is my assistant still here?
 
 -----
 
-hi
+You believe you were in the right spot. What went wrong?
+[You have a faint memory of a phrase in your head: &quot;From Earth&#39;s bounty, beauty is forged from shimmering light. Turning what was once a monstreous visage into an angelic being; fleeing from the schackles of the world towards a fleeting light.&quot;](memory| [You know you have a book somewhere aorund here with clues as to what is happening and what you need to do.]&lt;idea|
+[You were pretty confident in your answer for the flowers.](hint1|
+[You were pretty confident in your answer for the ingots.](hint2|
+[You were pretty confident in your answer for the dust.](hint3|
+[You were pretty confident in your answer for the animal parts.](hint4|
+[You were pretty confident in your answer for the feathers.](hint5|
 
 [[laboratory]]
 
 (set: $looped to it + 1)
-(set: $time = -3)</tw-passagedata></tw-storydata>
+(set: $time = -3)
+
+(if: $book &gt;= 1)[(show: ?memory)(hide: ?idea)]
+
+(if: $flower)[(show: ?hint1)]
+(if: $gold)[(show: ?hint2)]
+(if: $emerald)[(show: ?hint3)]
+(if: $frog)[(show: ?hint4)]
+(if: $owl)[(show: ?hint5)]
+
+(set:$choose1 to false)
+(set:$flower to false)
+(set:$choose2 to false)
+(set:$gold to false)
+(set:$choose3 to false)
+(set:$emerald to false)
+(set:$choose4 to false)
+(set:$frog to false)
+(set:$choose5 to false)
+(set:$owl to false)
+(set: $pause to false)</tw-passagedata><tw-passagedata pid="22" name="explain" tags="" position="250,350" size="100,100">==&gt;&lt;==
+You open the book that you used to help make the watch and it describes the symptoms that you are currently feeling along with describing a magic concoction that you can make to fix this ailment. However, the page that has theingredients seems to be torn away, assumedly by the birds that currently flock your library. 
+What it does leave is a phrase to help remember:
+&quot;From Earth&#39;s bounty, beauty is forged from shimmering light. Turning what was once a monstreous visage into an angelic being; fleeing from the schackles of the world towards a fleeting light.&quot;
+
+[[Leave the book -&gt;library]]
+
+(set: $book = 1)
+(set: $pause to true)</tw-passagedata><tw-passagedata pid="23" name="Peacock Feather" tags="" position="200,1025" size="100,100">==&gt;&lt;==
+*You pick up the Peacock Feather.*
+
+[[blink -&gt;library]]
+</tw-passagedata><tw-passagedata pid="24" name="Owl Feather" tags="" position="200,900" size="100,100">==&gt;&lt;==
+*You pick up the Owl Feather.*
+
+[[blink -&gt;library]]
+
+(set: $owl to true)</tw-passagedata><tw-passagedata pid="25" name="Raven Feather" tags="" position="200,1150" size="100,100">==&gt;&lt;==
+*You pick up the Raven Feather.*
+
+[[blink -&gt;library]]
+</tw-passagedata><tw-passagedata pid="26" name="Blue Morning Glory" tags="" position="500,900" size="100,100">==&gt;&lt;==
+*You pick up the Blue Morning Glory.*
+
+[[blink -&gt;garden]]
+
+(set: $flower to true)</tw-passagedata><tw-passagedata pid="27" name="Yellow Sunflower" tags="" position="500,1150" size="100,100">==&gt;&lt;==
+*You pick up the Yellow Sunflower.*
+
+[[blink -&gt;garden]]
+</tw-passagedata><tw-passagedata pid="28" name="Purple Nightshade" tags="" position="500,1025" size="100,100">==&gt;&lt;==
+*You pick up the Purple Nigthshade.*
+
+[[blink -&gt;garden]]
+</tw-passagedata><tw-passagedata pid="29" name="Frog Warts" tags="" position="800,900" size="100,100">==&gt;&lt;==
+*You pick up the Frog Warts.*
+
+[[blink -&gt;laboratory]]
+
+(set: $frog to true)</tw-passagedata><tw-passagedata pid="30" name="Lizard Tail" tags="" position="800,1025" size="100,100">==&gt;&lt;==
+*You pick up the Lizard Tail.*
+
+[[blink -&gt;laboratory]]
+</tw-passagedata><tw-passagedata pid="31" name="Spider Silk" tags="" position="800,1150" size="100,100">==&gt;&lt;==
+*You pick up the Spider Silk.*
+
+[[blink -&gt;laboratory]]
+</tw-passagedata><tw-passagedata pid="32" name="Ruby Dust" tags="" position="1100,1025" size="100,100">==&gt;&lt;==
+*You pick up the Ruby Dust.*
+
+[[blink -&gt;central room]]
+</tw-passagedata><tw-passagedata pid="33" name="Emerald Dust" tags="" position="1100,900" size="100,100">==&gt;&lt;==
+*You pick up the Emerald Dust.*
+
+[[blink -&gt;central room]]
+
+(set: $emerald to true)</tw-passagedata><tw-passagedata pid="34" name="Sapphire Dust" tags="" position="1100,1150" size="100,100">==&gt;&lt;==
+*You pick up the Sapphire Dust.*
+
+[[blink -&gt;central room]]
+</tw-passagedata><tw-passagedata pid="35" name="Bronze Ingot" tags="" position="1400,1150" size="100,100">==&gt;&lt;==
+*You pick up the Bronze Ingot.*
+
+[[blink -&gt;balcony]]</tw-passagedata><tw-passagedata pid="36" name="Silver Ingot" tags="" position="1400,1025" size="100,100">==&gt;&lt;==
+*You pick up the Silver Ingot.*
+
+[[blink -&gt;balcony]]</tw-passagedata><tw-passagedata pid="37" name="Gold Ingot" tags="" position="1400,900" size="100,100">==&gt;&lt;==
+*You pick up the Gold Ingot.*
+
+[[blink -&gt;balcony]]
+
+(set: $gold to true)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
