@@ -70,17 +70,14 @@ Text style:
 
 (text-color: red)+(hover-style:(text-color: orange))+(text-style: &quot;fidget&quot;)[text]</tw-passagedata><tw-passagedata pid="3" name=" here" tags="" position="75,25" size="100,100">[[wait in place -&gt; here]] *can be used to stay in place but pass the time*
 
-[[back to Clipboard -&gt;Clipboard]]</tw-passagedata><tw-passagedata pid="4" name="balcony" tags="" position="1425,525" size="100,100">*4 - 10*
-(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+[[back to Clipboard -&gt;Clipboard]]</tw-passagedata><tw-passagedata pid="4" name="balcony" tags="" position="1425,525" size="100,100">(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
 Balcony - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
 [ You stare out at the beautiful sunset. What a view! Your assistant doesn&#39;t seem to be on the balcony or around the storage closet.[ [The storage closet is cracked open letting anyone in at its [[contents-&gt;piece2]]. ](reveal| ](opening| ]&lt;story|
 
------
-
-[ hi [ [ [[piece2]] ](reveal| ](opening| ](history|
+[The sunset feels familiar staring at it. If you weren&#39;t so conflicted it would seem almost beautiful. This is where you closet is where you keep all of your construction materials and larger metals. [The storage closet seems to be locked.](closed| [ [The storage closet is cracked open letting anyone in at its [[contents-&gt;piece2]]. ](reveal| ](opening| ](history|
 
 -----
 [ [[wait-&gt;balcony]] ](wait|
@@ -89,24 +86,21 @@ Balcony - 8:(if: $time &lt; 10)[0]$time
 
 (hover-style:(text-color: yellow))[[[Sparks -&gt;hint2]]](history2| ](tik|
 
-(if: $time &lt;= 12)[(show: ?opening)]
-(if: $choose2 is false)[(show: ?reveal)]
 (if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
 (if: $flower and $gold and $emerald and $frog and $owl)[(show: ?yes)](else:)[(show: ?no)]
 (if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $time &lt;= 12)[(show: ?opening)](else:)[(show: ?closed)]
+(if: $choose2 is false)[(show: ?reveal)]
 (if: $looped &gt;= 3)[(show: ?history2)]
 (if: $time &gt;= 30)[(hide: ?wait)]
-</tw-passagedata><tw-passagedata pid="5" name="central room" tags="" position="1125,525" size="100,100">*3 - 5 - 9*
-(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+</tw-passagedata><tw-passagedata pid="5" name="central room" tags="" position="1125,525" size="100,100">(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
 Central Room - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
 [ A circling metal machine rotates above you at the center of the tower. The Crystal grinder sits directly under the metal machine. Where could your assistant be?[ [The Crystal grinder has stopped for the moment, revealing some [[dust -&gt;piece3]]. ](reveal| ](opening| ]&lt;story|
 
------
-
-[ hi [ [ [[piece3]] ](reveal| ](opening| ](history|
+[Above you hangs a large metal machine that rings occasionally from time to time, but can never be predicted. The floor of this central room is mostly empty besides a large metal machine in the middle you callthe Crystal Grinder. [The Crystal Grinder is currently working right now.](closed| [ [The Crystal Grinder has stopped for the moment, revealing some [[dust -&gt;piece3]]. ](reveal| ](opening| ](history|
 
 -----
 [ [[wait-&gt;central room]] ](wait|
@@ -115,22 +109,19 @@ Central Room - 8:(if: $time &lt; 10)[0]$time
 
 (hover-style:(text-color: yellow))[[[Sparks -&gt;hint3]]](history2| ](tik|
 
-(if: $time &gt;= 9 and $time &lt;= 15)[(show: ?opening)]
-(if: $choose3 is false)[(show: ?reveal)]
 (if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
 (if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $time &gt;= 9 and $time &lt;= 15)[(show: ?opening)](else:)[(show: ?closed)]
+(if: $choose3 is false)[(show: ?reveal)]
 (if: $looped &gt;= 3)[(show: ?history2)]
-(if: $time &gt;= 30)[(hide: ?wait)]</tw-passagedata><tw-passagedata pid="6" name="garden" tags="" position="525,550" size="100,100">*1*
-(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+(if: $time &gt;= 30)[(hide: ?wait)]</tw-passagedata><tw-passagedata pid="6" name="garden" tags="" position="525,550" size="100,100">(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
 Garden - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
 [ Your verdant garden is prospering like always. You can&#39;t find your assistant tending to the garden anywhere.[ [You have some [[flowers -&gt;piece1]] with special properties blooming at the moment. ](reveal| ](opening| ]&lt;story|
 
------
-
-[ hi [ [ [[piece1]] ](reveal| ](opening| ](history|
+[Your greenhouse is filled with a vast array of different plants and flowers for your experiments and magical crafting. Anything from tall Bloodroot trees, to mandrakes, to normal flowers grow here.  [The flowers aren&#39;t in bloom at the moment.](closed| [ [You have some [[flowers -&gt;piece1]] with special properties blooming at the moment. ](reveal| ](opening| ](history|
 
 -----
 [ [[wait-&gt;garden]] ](wait|
@@ -138,24 +129,21 @@ Garden - 8:(if: $time &lt; 10)[0]$time
 
 (hover-style:(text-color: yellow))[[[Sparks -&gt;hint1]]](history2| ](tik|
 
-(if: $time &lt;= 6)[(show: ?opening)]
-(if: $choose1 is false)[(show: ?reveal)]
 (if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
 (if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $time &lt;= 6)[(show: ?opening)](else:)[(show: ?closed)]
+(if: $choose1 is false)[(show: ?reveal)]
 (if: $looped &gt;= 3)[(show: ?history2)]
 (if: $time &gt;= 30)[(hide: ?wait)]
 
-</tw-passagedata><tw-passagedata pid="7" name="library" tags="" position="225,525" size="100,100">*7*
-(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+</tw-passagedata><tw-passagedata pid="7" name="library" tags="" position="225,525" size="100,100">(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
 Library - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
 [ Your library is as impressive as ever and your birds circle above you. but no sign of your assistant.[ [Huh, that&#39;s weird. Your birds seem to be missing and their [[feathers -&gt;piece5]] are scattered on the ground.  ](reveal| ](opening| ]&lt;story|
 
------
-
-[ hi [ [ [[piece5]] ](reveal| ](opening| ](history|
+[Your grand library full of all things knowledge. Tall ladders and staircases span the room to help you reach each and every book. This is also the home for some of your birds which you let fly and roost about in here. [The birds continue to circle high above you.](closed| [ [Huh, that&#39;s weird. Your birds seem to be missing and their [[feathers -&gt;piece5]] are scattered on the ground.  ](reveal| ](opening| ](history|
 
 -----
 [ [[wait-&gt;library]] ](wait|
@@ -164,25 +152,22 @@ Library - 8:(if: $time &lt; 10)[0]$time
 
 (hover-style:(text-color: yellow))[[[Sparks -&gt;hint5]]](history2| ](tik|
 
-(if: $time &gt;= 21)[(show: ?opening)]
-(if: $choose5 is false)[(show: ?reveal)]
 (if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
 (if: $looped &gt;= 1)[(show: ?tome)]
 (if: $book &gt;= 1)[(hide: ?tome)]
 (if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $time &gt;= 21)[(show: ?opening)](else:)[(show: ?closed)]
+(if: $choose5 is false)[(show: ?reveal)]
 (if: $looped &gt;= 3)[(show: ?history2)]
 (if: $time &gt;= 30)[(hide: ?wait)]
-</tw-passagedata><tw-passagedata pid="8" name="laboratory" tags="" position="825,525" size="100,100">==&gt; *0 - 2 - 6 - 8* &lt;==
-(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
+</tw-passagedata><tw-passagedata pid="8" name="laboratory" tags="" position="825,525" size="100,100">(if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
 Laboratory - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
-[ You call out your assistant&#39;s name again but you don&#39;t hear a response. Your assistant is nowhere to be seen here. They don&#39;t seem to be working on their own assignment in the lab as well. [ [In a cauldron there are some bubling [[ingredients -&gt;piece4]]. ](reveal| ](opening| ]&lt;story|
+[ You call out your assistant&#39;s name again but you don&#39;t hear a response. Your assistant is nowhere to be seen here. They don&#39;t seem to be working on their own assignment in the lab as well. [ [Besides the cauldron there are some [[ingredients -&gt;piece4]]. ](reveal| ](opening| ]&lt;story|
 
------
-
-[ hi [ [ [[piece4]] ](reveal| ](opening| ](history|
+[Your lab remains mostly empty beside a couple of machines and equipment working by themsleves. It&#39;s almost dark in the room besides the few machine lights that are working. [The cauldron is currently bubbling.](closed| [ [Besides the cauldron there are some [[ingredients -&gt;piece4]]. ](reveal| ](opening| ](history|
 
 -----
 [ [[wait-&gt;laboratory]] ](wait|
@@ -192,10 +177,10 @@ Laboratory - 8:(if: $time &lt; 10)[0]$time
 
 (hover-style:(text-color: yellow))[[[Sparks -&gt;hint4]]](history2| ](tik|
 
-(if: $time &gt;= 18 and $time &lt;= 21)[(show: ?opening)]
-(if: $choose4 is false)[(show: ?reveal)]
 (if: $time &gt;= 30)[(show: ?timer)](else:)[(show: ?tik)] 
 (if: $looped &gt;= 1)[(show: ?history)(show: ?wait)(hide: ?story)]
+(if: $time &gt;= 18 and $time &lt;= 21)[(show: ?opening)](else:)[(show: ?closed)]
+(if: $choose4 is false)[(show: ?reveal)]
 (if: $looped &gt;= 3)[(show: ?history2)]
 (if: $time &gt;= 30)[(hide: ?wait)]</tw-passagedata><tw-passagedata pid="9" name="loop" tags="" position="800,200" size="100,100">==&gt;&lt;==
 - (text-color: blue)+(text-style: &quot;fidget&quot;)[A](text-color: blue)+(text-style: &quot;fidget&quot;)[R](text-color: purple)+(text-style: &quot;fidget&quot;)[C](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[E] - (text-color: orange)+(text-style: &quot;fidget&quot;)[S](text-color: orange)+(text-style: &quot;fidget&quot;)[P](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: purple)+(text-style: &quot;fidget&quot;)[R](text-color: blue)+(text-style: &quot;fidget&quot;)[K](text-color: blue)+(text-style: &quot;fidget&quot;)[S] -
@@ -216,6 +201,7 @@ You have a nagging feeling you were in the wrong spot, although you don&#39;t re
 [You were pretty confident in your answer for the dust.](hint3|
 [You were pretty confident in your answer for the animal parts.](hint4|
 [You were pretty confident in your answer for the feathers.](hint5|
+Whatever that means.
 
 [[laboratory]]
 
@@ -347,13 +333,14 @@ If you didn&#39;t realize that sparking meant something bad happened, you would 
 Time to find some answers.
 -----
 
-[You believe you were in the right spot. What went wrong?]
+[You believe you were in the right spot. What went wrong?]&lt;idk|
 [You have a faint memory of a phrase in your head: &quot;From Earth&#39;s bounty, beauty is forged from shimmering light. Turning what was once a monstreous visage into an angelic being; fleeing from the schackles of the world towards a fleeting light.&quot;](memory| [You know you have a book somewhere aorund here with clues as to what is happening and what you need to do.]&lt;idea|
 [You were pretty confident in your answer for the flowers.](hint1|
 [You were pretty confident in your answer for the ingots.](hint2|
 [You were pretty confident in your answer for the dust.](hint3|
 [You were pretty confident in your answer for the animal parts.](hint4|
 [You were pretty confident in your answer for the feathers.](hint5|
+Whatever that means.
 
 [[laboratory]]
 
@@ -361,6 +348,8 @@ Time to find some answers.
 (set: $time = -3)
 
 (if: $book &gt;= 1)[(show: ?memory)(hide: ?idea)]
+(if: $looped &lt;= 1)[(hide: ?idk)]
+
 
 (if: $flower)[(show: ?hint1)]
 (if: $gold)[(show: ?hint2)]
