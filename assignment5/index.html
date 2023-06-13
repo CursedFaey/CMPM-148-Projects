@@ -12,11 +12,13 @@
 <tw-storydata name="Arcane Sparks" startnode="1" creator="Twine" creator-version="2.6.1" format="Harlowe" format-version="3.3.4" ifid="625F7A25-AF51-4174-83EF-F4A4FE6B175A" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="500,200" size="100,100">==&gt;&lt;==
 - (text-color: blue)+(text-style: &quot;fidget&quot;)[A](text-color: blue)+(text-style: &quot;fidget&quot;)[R](text-color: purple)+(text-style: &quot;fidget&quot;)[C](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[E] - (text-color: orange)+(text-style: &quot;fidget&quot;)[S](text-color: orange)+(text-style: &quot;fidget&quot;)[P](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: purple)+(text-style: &quot;fidget&quot;)[R](text-color: blue)+(text-style: &quot;fidget&quot;)[K](text-color: blue)+(text-style: &quot;fidget&quot;)[S] -
 &lt;==
-tik tok tik tok look I put on my watch. Isn&#39;t that so cool? oh wow what was that spark?
+As you complete the final augmentations for your fancy new watch, you sit back and admire it briefly before turning it on. To your surprise, it sparks a ton and you close your eyes instinctively even though you have goggles on.
 
-I should talk to my assistant.
+Opening your eyes, the watch on your wrist seems to be normal, telling you it&#39;s 8:00pm.
 
-[[assistant -&gt;laboratory]]
+If you didn&#39;t realize that sparking meant something bad happened, you would think everything is fine. Maybe you can search your tower for your assistant to see what they discovered about the magic watch. You call out of your assistant. No response.
+
+[[Try again -&gt;laboratory]]
 
 (set: num-type $looped = 0)
 (set: num-type $time = -3)
@@ -71,10 +73,10 @@ Text style:
 [[back to Clipboard -&gt;Clipboard]]</tw-passagedata><tw-passagedata pid="4" name="balcony" tags="" position="1425,525" size="100,100">*4 - 10*
 (if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
-8:(if: $time &lt; 10)[0]$time
+Balcony - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
-[ You stare out at the beautiful sunset. What a view. Your assistant doesn&#39;t seem to be around the storage closet.[ [The storage closet is cracked open letting anyone in at its [[contents-&gt;piece2]]. ](reveal| ](opening| ]&lt;story|
+[ You stare out at the beautiful sunset. What a view! Your assistant doesn&#39;t seem to be on the balcony or around the storage closet.[ [The storage closet is cracked open letting anyone in at its [[contents-&gt;piece2]]. ](reveal| ](opening| ]&lt;story|
 
 -----
 
@@ -97,10 +99,10 @@ Text style:
 </tw-passagedata><tw-passagedata pid="5" name="central room" tags="" position="1125,525" size="100,100">*3 - 5 - 9*
 (if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
-8:(if: $time &lt; 10)[0]$time
+Central Room - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
-[ A circling metal machine rotates above you at the center of the tower. The Crystal grinder sits directly under the metal machine. [ [The Crystal grinder has stopped for the moment, revealing some [[dust -&gt;piece3]]. ](reveal| ](opening| ]&lt;story|
+[ A circling metal machine rotates above you at the center of the tower. The Crystal grinder sits directly under the metal machine. Where could your assistant be?[ [The Crystal grinder has stopped for the moment, revealing some [[dust -&gt;piece3]]. ](reveal| ](opening| ]&lt;story|
 
 -----
 
@@ -121,7 +123,7 @@ Text style:
 (if: $time &gt;= 30)[(hide: ?wait)]</tw-passagedata><tw-passagedata pid="6" name="garden" tags="" position="525,550" size="100,100">*1*
 (if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
-8:(if: $time &lt; 10)[0]$time
+Garden - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
 [ Your verdant garden is prospering like always. You can&#39;t find your assistant tending to the garden anywhere.[ [You have some [[flowers -&gt;piece1]] with special properties blooming at the moment. ](reveal| ](opening| ]&lt;story|
@@ -146,7 +148,7 @@ Text style:
 </tw-passagedata><tw-passagedata pid="7" name="library" tags="" position="225,525" size="100,100">*7*
 (if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
-8:(if: $time &lt; 10)[0]$time
+Library - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
 [ Your library is as impressive as ever and your birds circle above you. but no sign of your assistant.[ [Huh, that&#39;s weird. Your birds seem to be missing and their [[feathers -&gt;piece5]] are scattered on the ground.  ](reveal| ](opening| ]&lt;story|
@@ -173,10 +175,10 @@ Text style:
 </tw-passagedata><tw-passagedata pid="8" name="laboratory" tags="" position="825,525" size="100,100">==&gt; *0 - 2 - 6 - 8* &lt;==
 (if: $pause is false)[(set: $time to it + 3)](else:)[(set: $pause to false)]
 ==&gt;&lt;==
-8:(if: $time &lt; 10)[0]$time
+Laboratory - 8:(if: $time &lt; 10)[0]$time
 &lt;==
 
-[ Your assistant is nowhere to be seen here. They don&#39;t seem to be working on their own assignment in the lab here. [ [In a cauldron there are some bubling [[ingredients -&gt;piece4]]. ](reveal| ](opening| ]&lt;story|
+[ You call out your assistant&#39;s name again but you don&#39;t hear a response. Your assistant is nowhere to be seen here. They don&#39;t seem to be working on their own assignment in the lab as well. [ [In a cauldron there are some bubling [[ingredients -&gt;piece4]]. ](reveal| ](opening| ]&lt;story|
 
 -----
 
@@ -198,10 +200,13 @@ Text style:
 (if: $time &gt;= 30)[(hide: ?wait)]</tw-passagedata><tw-passagedata pid="9" name="loop" tags="" position="800,200" size="100,100">==&gt;&lt;==
 - (text-color: blue)+(text-style: &quot;fidget&quot;)[A](text-color: blue)+(text-style: &quot;fidget&quot;)[R](text-color: purple)+(text-style: &quot;fidget&quot;)[C](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[E] - (text-color: orange)+(text-style: &quot;fidget&quot;)[S](text-color: orange)+(text-style: &quot;fidget&quot;)[P](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: purple)+(text-style: &quot;fidget&quot;)[R](text-color: blue)+(text-style: &quot;fidget&quot;)[K](text-color: blue)+(text-style: &quot;fidget&quot;)[S] -
 &lt;==
-tik tok tik tok look I put on my watch. Isn&#39;t that so cool? oh wow what was that spark?
+You see sparks dance before your eyes, and you shut them from the intensity.
 
-I should talk to my assistant... wait is my assistant still here?
+Opening your eyes, the watch on your wrist seems to be normal, telling you it&#39;s 8:00pm.
 
+If you didn&#39;t realize that sparking meant something bad happened, you would think everything is fine... but then again something doesn&#39;t sit right. 8:00pm? You could swear it was later into the night. Your stomach feels turned. What did your watch do? 
+
+Time to find some answers.
 -----
 
 You have a nagging feeling you were in the wrong spot, although you don&#39;t remember for what.
@@ -333,13 +338,16 @@ Quickly after, you feel a great surge of energy.
 (set: $pause to true)</tw-passagedata><tw-passagedata pid="21" name="wrong" tags="" position="1000,200" size="100,100">==&gt;&lt;==
 - (text-color: blue)+(text-style: &quot;fidget&quot;)[A](text-color: blue)+(text-style: &quot;fidget&quot;)[R](text-color: purple)+(text-style: &quot;fidget&quot;)[C](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: orange)+(text-style: &quot;fidget&quot;)[N](text-color: orange)+(text-style: &quot;fidget&quot;)[E] - (text-color: orange)+(text-style: &quot;fidget&quot;)[S](text-color: orange)+(text-style: &quot;fidget&quot;)[P](text-color: purple)+(text-style: &quot;fidget&quot;)[A](text-color: purple)+(text-style: &quot;fidget&quot;)[R](text-color: blue)+(text-style: &quot;fidget&quot;)[K](text-color: blue)+(text-style: &quot;fidget&quot;)[S] -
 &lt;==
-tik tok tik tok look I put on my watch. Isn&#39;t that so cool? oh wow what was that spark?
+You see sparks dance before your eyes, and you shut them from the intensity.
 
-I should talk to my assistant... wait is my assistant still here?
+Opening your eyes, the watch on your wrist seems to be normal, telling you it&#39;s 8:00pm.
 
+If you didn&#39;t realize that sparking meant something bad happened, you would think everything is fine... but then again something doesn&#39;t sit right. 8:00pm? You could swear it was later into the night. Your stomach feels turned. What did your watch do? 
+
+Time to find some answers.
 -----
 
-You believe you were in the right spot. What went wrong?
+[You believe you were in the right spot. What went wrong?]
 [You have a faint memory of a phrase in your head: &quot;From Earth&#39;s bounty, beauty is forged from shimmering light. Turning what was once a monstreous visage into an angelic being; fleeing from the schackles of the world towards a fleeting light.&quot;](memory| [You know you have a book somewhere aorund here with clues as to what is happening and what you need to do.]&lt;idea|
 [You were pretty confident in your answer for the flowers.](hint1|
 [You were pretty confident in your answer for the ingots.](hint2|
